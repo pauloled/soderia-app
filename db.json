@@ -1,1 +1,20 @@
-{}
+{
+  "usuarios": [
+    { "id": 1, "usuario": "admin", "password": "123", "rol": "admin" },
+    { "id": 2, "usuario": "cliente", "password": "123", "rol": "cliente" }
+  ],
+  "productos": [
+    { "id": 1, "nombre": "Soda 1.5L", "stock": 20, "precio": 500 }
+  ],
+  "clientes": [],
+  "ventas": [
+    {
+      "id": 1,
+      "cliente": "Carlos",
+      "producto": "Soda 2L",
+      "cantidad": 3,
+      "total": 900,
+      "fecha": "2025-05-27"
+    }
+  ]
+}

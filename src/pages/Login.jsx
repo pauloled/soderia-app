@@ -1,36 +1,55 @@
-import React, { useState } from 'react'
-import { useAPI } from '../hooks/useAPI'
-import useStore from '../store/useStore'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import useStore from '../store/useStore';
 
 const Login = () => {
-  const [usuario, setUsuario] = useState('')
-  const [clave, setClave] = useState('')
-  const { get } = useAPI()
-  const login = useStore((state) => state.login)
-  const navigate = useNavigate()
+  const [form, setForm] = useState({ usuario: '', password: '' });
+  const [error, setError] = useState('');
+  const login = useStore((state) => state.login);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const res = await get(`usuarios?usuario=${usuario}&clave=${clave}`)
-    if (res.data.length > 0) {
-      login(usuario, res.data[0].rol)
-      navigate('/')
-    } else {
-      alert('Credenciales inválidas')
+    e.preventDefault();
+    try {
+      const res = await axios.get('http://localhost:3000/usuarios');
+      const usuarioEncontrado = res.data.find(
+        (u) => u.usuario === form.usuario && u.password === form.password
+      );
+
+      if (usuarioEncontrado) {
+        login(usuarioEncontrado.usuario, usuarioEncontrado.rol);
+        navigate('/home');
+      } else {
+        setError('Usuario o contraseña incorrectos');
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Error en la conexión');
     }
-  }
+  };
 
   return (
-    <div className="container mt-5">
-      <h2>Iniciar Sesión</h2>
+    <div>
+      <h2>Login</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <input className="form-control mb-2" placeholder="Usuario" onChange={(e) => setUsuario(e.target.value)} />
-        <input className="form-control mb-2" type="password" placeholder="Clave" onChange={(e) => setClave(e.target.value)} />
-        <button className="btn btn-primary">Ingresar</button>
+        <input type="text" name="usuario" placeholder="Usuario" onChange={handleChange} required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Ingresar</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
