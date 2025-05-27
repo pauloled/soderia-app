@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useAPI } from '../hooks/useAPI'
+import { useApi } from '../hooks/useAPI'
 
 const Productos = () => {
   const [productos, setProductos] = useState([])
-  const { get } = useAPI()
+  const { get } = useApi()
 
   useEffect(() => {
     get('productos').then(res => setProductos(res.data))

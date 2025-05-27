@@ -1,8 +1,10 @@
 .hero-section {
   height: 100vh;
-  background-color: #001f3f; /* azul marino oscuro */
+  background-color: #001f3f; /* azul marino */
   color: white;
   padding-top: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .bidon-img {
@@ -15,12 +17,3 @@
   50% { transform: translateY(-10px); }
 }
 
-.hero-section .btn-danger {
-  background-color: #dc3545;
-  border: none;
-}
-
-.hero-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
