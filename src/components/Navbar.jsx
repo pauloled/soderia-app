@@ -1,45 +1,32 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useStore from '../store/useStore';
+import './Navbar.css';
 
 const Navbar = () => {
   const rol = useStore((state) => state.rol);
-  const usuario = useStore((state) => state.usuario);
-  const logout = useStore((state) => state.logout);
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <Link className="navbar-brand" to="/home">Sodería</Link>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav me-auto">
-            {(rol === 'cliente') && (
-              <>
-                <li className="nav-item"><Link className="nav-link" to="/productos">Productos</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/ventas">Mis Pedidos</Link></li>
-              </>
-            )}
+    <nav className="navbar">
+      <ul className="navbar-nav">
+        <li><Link to="/home">Inicio</Link></li>
 
-            {(rol === 'admin' || rol === 'empleado') && (
-              <>
-                <li className="nav-item"><Link className="nav-link" to="/productos">Productos</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/clientes">Clientes</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/ventas">Ventas</Link></li>
-                {rol === 'admin' && <li className="nav-item"><Link className="nav-link" to="/admin">Usuarios</Link></li>}
-              </>
-            )}
-          </ul>
+        {rol === 'cliente' && (
+          <>
+            <li><Link to="/productos">Productos</Link></li>
+            <li><Link to="/ventas">Mis Pedidos</Link></li>
+          </>
+        )}
 
-          <span className="navbar-text me-3">Hola, {usuario}</span>
-          <button className="btn btn-outline-light btn-sm" onClick={handleLogout}>Logout</button>
-        </div>
-      </div>
+        {(rol === 'admin' || rol === 'empleado') && (
+          <>
+            <li><Link to="/productos">Productos</Link></li>
+            <li><Link to="/clientes">Clientes</Link></li>
+            <li><Link to="/ventas">Ventas</Link></li>
+            {rol === 'admin' && <li><Link to="/admin">Usuarios</Link></li>}
+          </>
+        )}
+      </ul>
     </nav>
   );
 };
