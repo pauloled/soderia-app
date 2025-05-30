@@ -33,42 +33,41 @@ Este proyecto fue pensado como una **aplicación real** adaptable a soderías o 
 
 ---
 
-## 🛠 Instalación y uso
+##  Instalación y uso
 
 ### 1. Clonar el repositorio
-```bash
-git clone https://github.com/tuusuario/soderia-los-gutierrez.git
-cd soderia-los-gutierrez
+-  git clone https://github.com/tuusuario/soderia-los-gutierrez.git
+-  cd soderia-los-gutierrez
 
 ### 2. Instalar dependencias
-```bash
 npm install
 
 ### 3. Iniciar JSON Server (en otro terminal)
-```bash
 npx json-server --watch db.json --port 3000
 
 ### 4. Iniciar la aplicación React
-```bash
 npm run dev
 
 ### 5. Acceder a la app
-```bash
-Navegador: http://localhost:5173
-*Cliente: user: cliente, pass: 123
-*Admin: user: admin, pass: 123
+  **Navegador**: http://localhost:5173
+-  **Cliente**: user: cliente, pass: 123
+-  **Admin**: user: admin, pass: 123
+  
+---
 
 ## Funcionalidades del sistema
 Módulo	Funciones disponibles
-**Landing Page**	Presentación de la marca, productos y contacto
-**Login**	Acceso seguro por roles (admin o cliente)
-**Productos**	Visualización, edición y carga de productos
-**Ventas**	Registrar ventas, ver historial
-**Clientes**	Registro, edición y listado de clientes
-**Carrito** Selección de productos para compra
-**Admin Panel**	Visualización general de la actividad del negocio
+-  **Landing Page**	: Presentación de la marca, productos y contacto
+-  **Login** : Acceso seguro por roles (admin o cliente)
+-  **Productos** : Visualización, edición y carga de productos
+-  **Ventas**	: Registrar ventas, ver historial
+-  **Clientes**	: Registro, edición y listado de clientes
+-  **Carrito** : Selección de productos para compra
+-  **Admin Panel**	: Visualización general de la actividad del negocio
+
+---
 
 ## Autores y colaboradores
-Desarrollado por: Ledesma Paulo, Ledesma Santiago, Navarro Santiago, Quiroga Jose, Ramirez Leonardo
-Materia: Programación III
-Año: 2025
+-  Desarrollado por: Ledesma Paulo, Ledesma Santiago, Navarro Santiago, Quiroga Jose, Ramirez Leonardo
+-  Materia: Programación III
+-  Año: 2025
