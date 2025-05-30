@@ -1,12 +1,74 @@
-# React + Vite
+# Sodería Los Gutiérrez - Sistema de Gestión de Ventas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Objetivo del Proyecto
 
-Currently, two official plugins are available:
+“Sodería Los Gutiérrez” es un sistema web diseñado para gestionar las operaciones diarias de una distribuidora de soda, con el objetivo de brindar una solución digital rápida, segura y escalable tanto para clientes como para administradores.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto fue pensado como una **aplicación real** adaptable a soderías o negocios similares que requieran controlar productos, ventas, usuarios, clientes y más desde una interfaz moderna y clara.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Beneficios del Sistema
+
+-  **Interfaz moderna y responsiva** (adaptada a distintos dispositivos).
+-  **Inicio de sesión seguro** con diferentes roles (admin y cliente).
+-  **Gestión de productos, clientes y ventas.**
+-  **Funcionalidades extra**: buscadores, filtros, carrito de compras (opcional), historial de ventas.
+-  **Escalabilidad**: fácilmente ampliable a más funcionalidades o integraciones (pagos, mapas, facturación).
+-  **Experiencia de usuario** fluida con navegación clara y botones accesibles.
+-  **Landing page profesional** para la presentación de la empresa y captación de nuevos clientes.
+
+---
+
+##  Tecnologías utilizadas
+
+- **React JS** (con Vite) – frontend SPA
+- **Zustand** – manejo global del estado (autenticación)
+- **React Router DOM** – navegación entre páginas
+- **Axios** – comunicación HTTP con backend
+- **JSON Server** – simulación de base de datos local (para usuarios, productos, ventas, etc.)
+- **Bootstrap** – diseño responsivo y estilizado rápido
+- **CSS personalizado** – estilos únicos para marca y estética propia
+- **Git y GitHub** – control de versiones y colaboración
+
+---
+
+## 🛠 Instalación y uso
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/tuusuario/soderia-los-gutierrez.git
+cd soderia-los-gutierrez
+
+### 2. Instalar dependencias
+```bash
+npm install
+
+### 3. Iniciar JSON Server (en otro terminal)
+```bash
+npx json-server --watch db.json --port 3000
+
+### 4. Iniciar la aplicación React
+```bash
+npm run dev
+
+### 5. Acceder a la app
+```bash
+Navegador: http://localhost:5173
+*Cliente: user: cliente, pass: 123
+*Admin: user: admin, pass: 123
+
+## Funcionalidades del sistema
+Módulo	Funciones disponibles
+**Landing Page**	Presentación de la marca, productos y contacto
+**Login**	Acceso seguro por roles (admin o cliente)
+**Productos**	Visualización, edición y carga de productos
+**Ventas**	Registrar ventas, ver historial
+**Clientes**	Registro, edición y listado de clientes
+**Carrito** Selección de productos para compra
+**Admin Panel**	Visualización general de la actividad del negocio
+
+## Autores y colaboradores
+Desarrollado por: Ledesma Paulo, Ledesma Santiago, Navarro Santiago, Quiroga Jose, Ramirez Leonardo
+Materia: Programación III
+Año: 2025
