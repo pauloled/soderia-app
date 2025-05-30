@@ -36,8 +36,8 @@ Este proyecto fue pensado como una **aplicación real** adaptable a soderías o 
 ##  Instalación y uso
 
 ### 1. Clonar el repositorio
--  git clone https://github.com/tuusuario/soderia-los-gutierrez.git
--  cd soderia-los-gutierrez
+-  git clone [https://github.com/pauloled/soderia-app]
+-  cd soderia-app
 
 ### 2. Instalar dependencias
 npm install
