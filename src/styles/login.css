@@ -1,0 +1,26 @@
+/* Asegura que el login ocupe toda la pantalla */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Fondo azul marino centrado */
+  .login-bg {
+    height: 100vh;
+    width: 100vw;
+    background-color: #001f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Contenedor del formulario */
+  .login-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }

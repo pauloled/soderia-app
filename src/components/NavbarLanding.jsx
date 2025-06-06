@@ -8,7 +8,7 @@ const NavbarLanding = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top w-100">
       <div className="container">
-        <a className="navbar-brand" href="#">Sodería</a>
+        <a className="navbar-brand" href="#">Sodería Los Gutierrez</a>
          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon" />
          </button>

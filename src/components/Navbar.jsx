@@ -1,32 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import useStore from '../store/useStore';
-import '../styles/Navbar.css';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
-  const rol = useStore((state) => state.rol);
+  const navigate = useNavigate();
 
   return (
-    <nav className="navbar">
-      <ul className="navbar-nav">
-        <li><Link to="/home">Inicio</Link></li>
-
-        {rol === 'cliente' && (
-          <>
-            <li><Link to="/productos">Productos</Link></li>
-            <li><Link to="/ventas">Mis Pedidos</Link></li>
-          </>
-        )}
-
-        {(rol === 'admin' || rol === 'empleado') && (
-          <>
-            <li><Link to="/productos">Productos</Link></li>
-            <li><Link to="/clientes">Clientes</Link></li>
-            <li><Link to="/ventas">Ventas</Link></li>
-            {rol === 'admin' && <li><Link to="/admin">Usuarios</Link></li>}
-          </>
-        )}
-      </ul>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" onClick={() => navigate('/')}>Sodería</a>
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <button className="btn btn-outline-light" onClick={() => navigate('/')}>
+                Home
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };

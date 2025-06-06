@@ -1,15 +1,45 @@
 {
   "usuarios": [
-    { "id": 1, "usuario": "admin", "password": "123", "rol": "admin" },
-    { "id": 2, "usuario": "cliente", "password": "123", "rol": "cliente" }
+    {
+      "id": "1",
+      "usuario": "admin",
+      "password": "123",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "usuario": "cliente",
+      "password": "123",
+      "rol": "cliente"
+    },
+    {
+      "id": "5ae8",
+      "usuario": "Messi",
+      "password": "110",
+      "rol": "cliente"
+    }
   ],
   "productos": [
-    { "id": 1, "nombre": "Soda 1.5L", "stock": 20, "precio": 500 }
+    {
+      "id": "1",
+      "nombre": "Soda 1.5L",
+      "stock": 20,
+      "precio": 500
+    }
   ],
-  "clientes": [],
+  "clientes": [
+    {
+      "id": "92fb",
+      "nombre": "S",
+      "email": "jg@w",
+      "telefono": "1233",
+      "direccion": "333",
+      "usuario": "Messi"
+    }
+  ],
   "ventas": [
     {
-      "id": 1,
+      "id": "1",
       "cliente": "Carlos",
       "producto": "Soda 2L",
       "cantidad": 3,

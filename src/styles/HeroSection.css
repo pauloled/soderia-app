@@ -1,19 +1,41 @@
+/* Asegura que el hero ocupe el 100% de la pantalla */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero principal */
 .hero-section {
   height: 100vh;
+  width: 100%;
   background-color: #001f3f; /* azul marino */
   color: white;
+  display: flex;
+  align-items: center;
   padding-top: 80px;
+}
+
+/* Asegura que el contenido se centre verticalmente dentro del container */
+.hero-section .container {
+  height: 100%;
   display: flex;
   align-items: center;
 }
 
+/* Imagen animada */
 .bidon-img {
-  max-width: 300px;
+  max-width: 100%;
+  max-height: 300px;
   animation: flotar 3s ease-in-out infinite;
 }
 
+/* Animación flotante */
 @keyframes flotar {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-
