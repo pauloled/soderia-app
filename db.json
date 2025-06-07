@@ -21,12 +21,6 @@
   ],
   "productos": [
     {
-      "id": "1",
-      "nombre": "Soda 1.5L",
-      "stock": 20,
-      "precio": 500
-    },
-    {
       "id": "11",
       "nombre": "Agua Saborizada - IVESS CITRUS",
       "precio": "2500",

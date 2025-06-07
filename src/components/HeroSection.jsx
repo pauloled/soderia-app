@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/HeroSection.css'; // o donde tengas tus estilos
-import bidon from '../assets/bidon.jpg';
+import bidon from '../assets/bidon.png';
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -23,7 +23,7 @@ const HeroSection = () => {
             </button>
           </div>
           <div className="col-md-6 text-center">
-            <img src={bidon} alt="Bidón de soda" className="bidon-img" />
+            <img src={bidon} alt="Bidon de soda" className="bidon-img" />
           </div>
         </div>
       </div>
