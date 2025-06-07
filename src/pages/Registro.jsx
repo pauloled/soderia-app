@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApi } from '../hooks/useAPI';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/registro.css'; 
+
 
 const Registro = () => {
   const [form, setForm] = useState({
@@ -51,8 +53,8 @@ const Registro = () => {
 
   return (
     <div className="container mt-5 pt-5">
-      <h2 className="text-center mb-4">Registro de Cliente</h2>
-      <form onSubmit={handleSubmit} className="col-md-6 offset-md-3">
+      <h2 className="registro">Registro de Cliente</h2>
+      <form onSubmit={handleSubmit} className="form-container">
         <div className="mb-3">
           <label>Nombre completo</label>
           <input type="text" className="form-control" name="nombre" required onChange={handleChange} />
