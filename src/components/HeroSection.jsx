@@ -18,7 +18,7 @@ const HeroSection = () => {
               siendo la mejor marca de nuestra categoría en la provincia.<br />
               Elaboramos nuestros productos bajo estrictos estándares de higiene y calidad.
             </p>
-            <button className="btn btn-danger btn-lg mt-4" onClick={() => navigate('/registro')}>
+            <button className="btn btn-danger btn-lg mt-4" onClick={() => navigate('/login')}>
               ¡Hacé tu pedido!
             </button>
           </div>

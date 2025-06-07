@@ -24,3 +24,11 @@ html, body, #root {
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
+  .boton-registro {
+   background-color:#0073e6;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
