@@ -1,22 +1,34 @@
-.navbar {
-  background-color: #03366; /* azul oscuro */
-  padding: 0.6rem 1rem;
+/* Asegurate de que este archivo esté importado en tu Navbar.jsx */
+
+.custom-navbar {
+  background-color: #6fa4e0;
+  padding: 0.3rem 1rem; /* menos padding vertical */
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow: visible; /* deja que el logo se "salga" un poco */
+}
+
+.logo {
+  height: 90px;       /* más grande y visible */
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+  margin-top: -10px;  /* permite que "sobresalga" un poco hacia arriba */
+  margin-bottom: -10px;
 }
 
 .navbar-nav {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: center;
   margin: 0;
   padding: 0;
-  justify-content: space-between;
 }
 
 .navbar-nav li a {
-  color: #cce7ff; /* celeste claro */
+  color: #cce7ff;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -26,6 +38,50 @@
 }
 
 .navbar-nav li a:hover {
-  background-color: #00509e; /* azul un poco más claro */
+  background-color: #00509e;
+  color: white;
+}
+
+
+/* Estilos para el NavbarLanding */
+.custom-navbar {
+  background-color: #6fa4e0;
+  padding: 0.3rem 1rem; /* menos padding vertical */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: visible; /* deja que el logo se "salga" un poco */
+}
+
+.logo {
+  height: 90px;       /* más grande y visible */
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+  margin-top: -10px;  /* permite que "sobresalga" un poco hacia arriba */
+  margin-bottom: -10px;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li a {
+  color: #cce7ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav li a:hover {
+  background-color: #00509e;
   color: white;
 }
