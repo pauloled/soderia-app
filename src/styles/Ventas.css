@@ -1,0 +1,100 @@
+.contenedor-ventas {
+  padding: 1rem 2rem;
+  margin-top: 70px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.form-venta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-venta input,
+.form-venta select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-venta button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #6fa4e0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.tarjetas-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-producto {
+  padding: 0.6rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tarjeta-producto.verde {
+  border: 2px solid green;
+  background-color: #e6f9e6;
+}
+
+.tarjeta-producto.rojo {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.btn-crear {
+  padding: 0.7rem 1.2rem;
+  background-color: #198754;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.tabla-ventas {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.tabla-ventas th,
+.tabla-ventas td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.btn-pendiente {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.btn-entregado {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background-color: crimson;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}

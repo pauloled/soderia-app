@@ -17,6 +17,12 @@
       "usuario": "Messi",
       "password": "110",
       "rol": "cliente"
+    },
+    {
+      "id": "19c1",
+      "usuario": "Agus12",
+      "password": "1234",
+      "rol": "cliente"
     }
   ],
   "productos": [
@@ -36,16 +42,37 @@
       "telefono": "1233",
       "direccion": "333",
       "usuario": "Messi"
+    },
+    {
+      "id": "4221",
+      "nombre": "Agustin Gomez",
+      "email": "asd123@gmail.com",
+      "telefono": "3815313413",
+      "direccion": "Lamadrid 518",
+      "usuario": "Agus12"
     }
   ],
   "ventas": [
     {
-      "id": "1",
-      "cliente": "Carlos",
-      "producto": "Soda 2L",
-      "cantidad": 3,
-      "total": 900,
-      "fecha": "2025-05-27"
+      "id": 1,
+      "fecha": "2025-06-06",
+      "usuario": "admin",
+      "productos": [
+        { "id": 1, "nombre": "Soda 1.5L", "cantidad": 2 },
+        { "id": 2, "nombre": "Soda 2.25L", "cantidad": 1 }
+      ],
+      "total": 2800,
+      "estado": "completada"
+    },
+    {
+      "id": 2,
+      "fecha": "2025-06-06",
+      "usuario": "admin",
+      "productos": [
+        { "id": 5, "nombre": "Soda 600ml retornable", "cantidad": 4 }
+      ],
+      "total": 1200,
+      "estado": "pendiente"
     }
   ]
 }
