@@ -1,5 +1,8 @@
 body {
-  background-color: #0077cc;
+   background-image: url('./src/assets/fondo.jpeg'); /* ✅ Ruta según tu estructura */
+  background-size: cover;        /* Que cubra toda la pantalla */
+  background-position: center;   /* Centrada */
+  background-repeat: no-repeat;  /* No se repita */
   margin: 0;
   font-family: Arial, sans-serif;
   display: flex;
@@ -23,7 +26,7 @@ h2 {
   font-weight: 600;
 }
 .registro{
-    color:#ffffff
+    color:#0056f7;
 }
 
 .form-control {
