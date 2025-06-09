@@ -71,7 +71,7 @@ const Productos = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4">Gestión de Productos</h2>
+      <h2 className="tituloprod">Gestión de Productos</h2>
 
       {/* Formulario para agregar producto */}
       <div className="card mb-5">
