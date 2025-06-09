@@ -5,16 +5,19 @@ html, body, #root {
   }
   
   /* Fondo azul marino centrado */
-  .login-bg {
-    height: 100vh;
-    width: 100vw;
-    background-color: #001f3f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
+.login-bg {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./src/assets/fondo.jpeg'); /* ✅ Ruta según tu estructura */
+  background-size: cover;        /* Que cubra toda la pantalla */
+  background-position: center;   /* Centrada */
+  background-repeat: no-repeat;  /* No se repita */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
   /* Contenedor del formulario */
   .login-card {
     background-color: #f8f9fa;

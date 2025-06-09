@@ -6,7 +6,7 @@
 }
 
 .carousel {
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto; /* centrado */
   border-radius: 10px;
   overflow: hidden;
@@ -14,7 +14,7 @@
 }
 
 .carousel-item img {
-  height: 800px;
+  height: 400x;
   object-fit: cover;
   width: 100%;
   display: block;
