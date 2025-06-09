@@ -43,6 +43,17 @@ const useStore = create((set) => ({
       console.error('Error al eliminar venta:', error);
     }
   },
+
+  // Productos (agregado)
+  productos: [],
+  fetchProductos: async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/productos");
+      set({ productos: res.data });
+    } catch (error) {
+      console.error("Error al obtener productos:", error);
+    }
+  },
 }));
 
 export default useStore;
