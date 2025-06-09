@@ -1,6 +1,8 @@
 import React from 'react';
 import producto1 from '../assets/prod1.jpg'; // productos fake
 import producto2 from '../assets/prod2.jpg';
+import '../styles/Carousel.css';
+
 
 const CarouselProductos = () => (
   <section id="productos" className="bg-white py-5">

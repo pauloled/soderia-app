@@ -8,14 +8,14 @@ const LandingPage = () => {
     <>
       <NavbarLanding />
       <HeroSection />
-      {/* Sección blanca genérica */}
+
+
+      {/* Sección donde se muestra el carrusel */}
       <section className="bg-light py-5 text-center">
         <div className="container">
-          <h3>Distribución nl</h3>
-          <p>Entregamos a todo el país con garantía de pureza y confianza.</p>
+          <CarouselProductos />
         </div>
       </section>
-      <CarouselProductos />
     </>
   );
 };
