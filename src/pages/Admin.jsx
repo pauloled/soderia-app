@@ -14,6 +14,9 @@ const Admin = () => {
     navigate('/login');
   };
 
+  // Si usuario no está cargado, no renderizar nada (evita errores)
+  if (!usuario) return null;
+
   return (
     <>
       <Navbar />
@@ -56,7 +59,7 @@ const Admin = () => {
             }}
           >
             <p>
-              Bienvenido/a, <strong>{usuario}</strong>. Estás logueado como{' '}
+              Bienvenido/a, <strong>{usuario?.usuario}</strong>. Estás logueado como{' '}
               <em>{rol}</em>.
             </p>
             <button
@@ -98,8 +101,8 @@ const Admin = () => {
                 <li className="list-group-item">
                   <button
                     className="btn btn-outline-primary"
-                    onClick={() => navigate('/clientes')}
-                  >
+                    onClick={() => navigate('/usuarios')}
+                  > 
                     Gestión de Clientes
                   </button>
                 </li>

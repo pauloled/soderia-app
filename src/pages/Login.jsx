@@ -24,16 +24,15 @@ const Login = () => {
     );
 
     if (usuarioEncontrado) {
-      login(usuarioEncontrado.usuario, usuarioEncontrado.rol);
-
+  login(usuarioEncontrado, usuarioEncontrado.rol);
       // 🔁 Redirige según el rol
       if (usuarioEncontrado.rol === 'admin') {
-        navigate('/admin');
-      } else if (usuarioEncontrado.rol === 'cliente') {
-        navigate('/cliente');
-      } else {
-        navigate('/home'); // fallback si querés agregar más roles
-      }
+    navigate('/admin');
+  } else if (usuarioEncontrado.rol === 'cliente') {
+    navigate('/cliente');
+  } else {
+    navigate('/home');
+  }
 
     } else {
       setError('Usuario o contraseña incorrectos');

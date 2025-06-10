@@ -23,6 +23,18 @@
       "usuario": "Agus12",
       "password": "1234",
       "rol": "cliente"
+    },
+    {
+      "id": "627b",
+      "usuario": "santiledes",
+      "password": "123",
+      "rol": "cliente"
+    },
+    {
+      "id": "f678",
+      "usuario": "prueba1",
+      "password": "123",
+      "rol": "cliente"
     }
   ],
   "productos": [
@@ -30,21 +42,28 @@
       "id": "12",
       "nombre": "Soda 1.5L",
       "precio": 900,
-      "stock": 81,
+      "stock": 50,
       "imagen": ""
     },
     {
       "id": "13",
       "nombre": "Soda 2.25L",
       "precio": 1000,
-      "stock": 87,
+      "stock": 28,
       "imagen": ""
     },
     {
       "id": "14",
       "nombre": "Soda 600ml retornable",
       "precio": 300,
-      "stock": 242,
+      "stock": 121,
+      "imagen": ""
+    },
+    {
+      "id": "141",
+      "nombre": "Bidon Grande 8L",
+      "precio": "5000",
+      "stock": "100",
       "imagen": ""
     }
   ],
@@ -64,21 +83,79 @@
       "telefono": "3815313413",
       "direccion": "Lamadrid 518",
       "usuario": "Agus12"
+    },
+    {
+      "id": "9143",
+      "nombre": "Santi Ledes",
+      "email": "santiledes@gmail.com",
+      "telefono": "38133131131",
+      "direccion": "Mi casa 1231",
+      "usuario": "santiledes"
+    },
+    {
+      "id": "7ac2",
+      "nombre": "prueba1",
+      "email": "prueba1@gmail.com",
+      "telefono": "386789987",
+      "direccion": "prueba 111",
+      "usuario": "prueba1"
     }
   ],
   "ventas": [
     {
-      "id": "76cf",
+      "id": "e0a4",
       "fecha": "2025-06-10",
-      "usuario": "Carlos Perez",
+      "usuario": "santiledes",
+      "productos": [
+        {
+          "nombre": "Soda 1.5L",
+          "cantidad": 5
+        },
+        {
+          "nombre": "Soda 2.25L",
+          "cantidad": 6
+        },
+        {
+          "nombre": "Soda 600ml retornable",
+          "cantidad": 7
+        }
+      ],
+      "total": 12600,
+      "estado": "completada"
+    },
+    {
+      "id": "47d9",
+      "fecha": "2025-06-10",
+      "usuario": "santiledes",
       "productos": [
         {
           "nombre": "Soda 2.25L",
-          "cantidad": 5
+          "cantidad": 21
         }
       ],
-      "total": 5000,
-      "estado": "completada"
+      "total": 21000,
+      "estado": "pendiente"
+    },
+    {
+      "id": "974a",
+      "fecha": "2025-06-10",
+      "usuario": "santiledes",
+      "productos": [
+        {
+          "nombre": "Soda 1.5L",
+          "cantidad": 5
+        },
+        {
+          "nombre": "Soda 2.25L",
+          "cantidad": 8
+        },
+        {
+          "nombre": "Soda 600ml retornable",
+          "cantidad": 70
+        }
+      ],
+      "total": 33500,
+      "estado": "pendiente"
     }
   ]
 }

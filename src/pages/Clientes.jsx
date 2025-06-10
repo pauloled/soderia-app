@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import useStore from "../store/useStore";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Cliente = () => {
   const { productos, fetchProductos, usuario } = useStore();
   const [carrito, setCarrito] = useState([]);
   const [cantidades, setCantidades] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProductos();
@@ -37,8 +39,7 @@ const Cliente = () => {
     const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
     const nuevaVenta = {
       fecha: new Date().toISOString().split("T")[0],
-      usuario: usuario?.nombre || "cliente",
-      cliente: usuario?.nombre || "cliente",
+      usuario: usuario?.usuario || "cliente",
       productos: carrito.map((p) => ({
         nombre: p.nombre,
         cantidad: p.cantidad
@@ -52,62 +53,105 @@ const Cliente = () => {
     for (const prod of carrito) {
       const nuevoStock = prod.stock - prod.cantidad;
       await axios.patch(`http://localhost:3000/productos/${prod.id}`, {
-        stock: nuevoStock
+        stock: nuevoStock,
       });
     }
 
     setCarrito([]);
     fetchProductos();
-    alert("¡Compra realizada con éxito!");
+    alert("¡Compra realizada!");
   };
+
+  // Si usuario no está cargado, no renderizar nada (evita errores)
+  if (!usuario) return null;
+
+  const totalCarrito = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
 
   return (
     <>
       <Navbar />
       <div className="container mt-4">
-        <h2 className="text-primary fw-bold">Bienvenido/a, {usuario?.nombre || "Cliente"}</h2>
+        <button
+          className="btn btn-info mb-3"
+          onClick={() => navigate("/mis-pedidos")}
+        >
+          Mis pedidos
+        </button>
 
-        {/* Carrito arriba */}
+        <h2 className="text-primary fw-bold">
+          Bienvenido/a, {usuario?.usuario || "Cliente"}
+        </h2>
+
+        {/* Carrito en tarjeta destacada */}
         {carrito.length > 0 && (
-          <div className="mb-4">
-            <h4>Carrito</h4>
-            {carrito.map((p, i) => (
-              <div key={i} className="alert alert-secondary d-flex justify-content-between align-items-center">
-                <strong>{p.nombre}</strong> - Cantidad: {p.cantidad}
-                <button className="btn btn-sm btn-danger" onClick={() => eliminarDelCarrito(p.id)}>X</button>
+          <div className="row mb-4">
+            <div className="col-md-6 offset-md-3">
+              <div className="card shadow">
+                <div className="card-header bg-primary text-white">
+                  <h4 className="mb-0">Carrito</h4>
+                </div>
+                <div className="card-body">
+                  {carrito.map((p, i) => (
+                    <div
+                      key={i}
+                      className="d-flex justify-content-between align-items-center border-bottom py-2"
+                    >
+                      <span>
+                        <strong>{p.nombre}</strong> - Cantidad: {p.cantidad}
+                      </span>
+                      <button
+                        className="btn btn-sm btn-danger"
+                        onClick={() => eliminarDelCarrito(p.id)}
+                      >
+                        X
+                      </button>
+                    </div>
+                  ))}
+                  <div className="mt-3">
+                    <div className="card bg-success text-white">
+                      <div className="card-body d-flex justify-content-between align-items-center">
+                        <span className="fw-bold">Total acumulado:</span>
+                        <span className="fw-bold fs-5">${totalCarrito}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button className="btn btn-success mt-3 w-100" onClick={comprar}>
+                    Comprar
+                  </button>
+                </div>
               </div>
-            ))}
-            <button className="btn btn-success" onClick={comprar}>Comprar</button>
+            </div>
           </div>
         )}
 
-        <h4>Productos disponibles</h4>
+        <h4 className="mt-4">Productos disponibles</h4>
         <div className="row">
-          {productos.map((p) => (
-            <div className="col-md-4 mb-3" key={p.id}>
+          {productos.map((producto) => (
+            <div className="col-md-4 mb-3" key={producto.id}>
               <div className="card">
-                <img
-                  src={p.imagen || "https://via.placeholder.com/150"}
-                  className="card-img-top"
-                  alt={p.nombre}
-                />
                 <div className="card-body">
-                  <h5 className="card-title">{p.nombre}</h5>
-                  <p className="card-text">${p.precio}</p>
+                  <h5 className="card-title">{producto.nombre}</h5>
+                  <p className="card-text">Precio: ${producto.precio}</p>
+                  <p className="card-text">Stock: {producto.stock}</p>
                   <input
                     type="number"
+                    min={1}
+                    max={producto.stock}
                     className="form-control mb-2"
                     placeholder="Cantidad"
-                    value={cantidades[p.id] || ""}
+                    value={cantidades[producto.id] || ""}
                     onChange={(e) =>
-                      setCantidades({
-                        ...cantidades,
-                        [p.id]: e.target.value
-                      })
+                      setCantidades((prev) => ({
+                        ...prev,
+                        [producto.id]: e.target.value,
+                      }))
                     }
                   />
-                  <button className="btn btn-primary" onClick={() => agregarAlCarrito(p)}>
-                    +
+                  <button
+                    className="btn btn-primary w-100"
+                    onClick={() => agregarAlCarrito(producto)}
+                  >
+                    Agregar al carrito
                   </button>
                 </div>
               </div>

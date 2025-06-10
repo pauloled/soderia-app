@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 const Ventas = () => {
   const { productos, fetchProductos } = useStore();
   const [ventas, setVentas] = useState([]);
+  const [usuarios, setUsuarios] = useState([]); // NUEVO: lista de usuarios
   const [cliente, setCliente] = useState("");
   const [productoSeleccionado, setProductoSeleccionado] = useState("");
   const [cantidad, setCantidad] = useState(1);
@@ -14,11 +15,18 @@ const Ventas = () => {
   useEffect(() => {
     fetchProductos();
     fetchVentas();
+    fetchUsuarios();
   }, []);
 
   const fetchVentas = async () => {
     const res = await axios.get("http://localhost:3000/ventas");
     setVentas(res.data);
+  };
+
+  // NUEVO: obtener usuarios reales
+  const fetchUsuarios = async () => {
+    const res = await axios.get("http://localhost:3000/usuarios");
+    setUsuarios(res.data);
   };
 
   const agregarProducto = () => {
@@ -40,6 +48,10 @@ const Ventas = () => {
     setProductoSeleccionado("");
   };
 
+  const eliminarProductoDelCarrito = (id) => {
+    setProductosSeleccionados((prev) => prev.filter((p) => p.id !== id));
+  };
+
   const confirmarVenta = async () => {
     if (!cliente || productosSeleccionados.length === 0) return;
 
@@ -50,7 +62,7 @@ const Ventas = () => {
 
     const nuevaVenta = {
       fecha: new Date().toISOString().split("T")[0],
-      usuario: cliente, // ← aquí se usa el cliente seleccionado como usuario
+      usuario: cliente, // ahora es el username real
       productos: productosSeleccionados.map((p) => ({
         nombre: p.nombre,
         cantidad: p.cantidad,
@@ -103,9 +115,11 @@ const Ventas = () => {
             onChange={(e) => setCliente(e.target.value)}
           >
             <option value="">Seleccione cliente</option>
-            <option value="Agustin Gomez">Agustin Gomez</option>
-            <option value="Maria Lopez">Maria Lopez</option>
-            <option value="Carlos Perez">Carlos Perez</option>
+            {usuarios.map((u) => (
+              <option key={u.id} value={u.usuario}>
+                {u.usuario} {u.nombre ? `- ${u.nombre}` : ""}
+              </option>
+            ))}
           </select>
 
           <select
@@ -137,25 +151,39 @@ const Ventas = () => {
           </button>
         </div>
 
-        {productosSeleccionados.map((p, i) => {
-          const stockSuficiente = p.stock >= p.cantidad;
-          return (
-            <div
-              key={i}
-              className={`alert ${
-                stockSuficiente ? "alert-success" : "alert-danger"
-              } fw-bold`}
-            >
-              {p.categoria} - {p.nombre} - Cantidad: {p.cantidad} - Stock{" "}
-              {stockSuficiente ? "suficiente" : "insuficiente"}
-            </div>
-          );
-        })}
-
+        {/* Carrito de productos seleccionados */}
         {productosSeleccionados.length > 0 && (
-          <button className="btn btn-success mb-4" onClick={confirmarVenta}>
-            Confirmar Venta
-          </button>
+          <div className="mb-4">
+            <h5>Carrito de venta</h5>
+            {productosSeleccionados.map((p, i) => {
+              const stockSuficiente = p.stock >= p.cantidad;
+              return (
+                <div
+                  key={i}
+                  className={`alert d-flex justify-content-between align-items-center ${
+                    stockSuficiente ? "alert-success" : "alert-danger"
+                  } fw-bold`}
+                >
+                  <span>
+                    {p.categoria} - {p.nombre} - Cantidad: {p.cantidad} - Stock{" "}
+                    {stockSuficiente ? "suficiente" : "insuficiente"}
+                  </span>
+                  <button
+                    className="btn btn-sm btn-danger ms-2"
+                    onClick={() => eliminarProductoDelCarrito(p.id)}
+                  >
+                    X
+                  </button>
+                </div>
+              );
+            })}
+            <div className="fw-bold text-end mb-2">
+              Total: ${productosSeleccionados.reduce((sum, p) => sum + p.precio * p.cantidad, 0)}
+            </div>
+            <button className="btn btn-success mb-4" onClick={confirmarVenta}>
+              Confirmar Venta
+            </button>
+          </div>
         )}
 
         <h3>Ventas realizadas</h3>
