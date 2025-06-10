@@ -1,5 +1,5 @@
-body {
-   background-image: url('./src/assets/fondo.jpeg'); /* ✅ Ruta según tu estructura */
+body {/* ✅ Ruta según tu estructura */
+  background-color: lab(100% 0.01 -0.01);
   background-size: cover;        /* Que cubra toda la pantalla */
   background-position: center;   /* Centrada */
   background-repeat: no-repeat;  /* No se repita */
