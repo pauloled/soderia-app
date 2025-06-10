@@ -43,7 +43,7 @@ const Usuarios = () => {
     <>
       <Navbar />
       <div className="container mt-4">
-        <h2 className="fw-bold mb-4">Gestor de Usuarios</h2>
+        <h2 className="fw-bold mb-4">Gestor de Clientes</h2>
         <div className="row">
           {usuariosConPendientes.map((u) => (
             <div className="col-md-4 mb-3" key={u.usuario}>

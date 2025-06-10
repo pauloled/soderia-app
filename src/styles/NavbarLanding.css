@@ -1,6 +1,6 @@
 .navbar-landing {
   background-color: #d3d3d3; /* Gris claro */
-padding: 0.3rem 1rem; /* menos padding vertical */
+  padding: 0.3rem 1rem; /* menos padding vertical */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -35,4 +35,18 @@ padding: 0.3rem 1rem; /* menos padding vertical */
 .navbar-landing .btn-outline-dark:hover {
   background-color: #555;
   color: white;
+}
+
+/* Botón azul grisáceo claro para "Iniciar sesión" */
+.btn-azulgris {
+  background-color: #5a8bb0 !important; /* azul grisáceo claro */
+  color: #fff !important;
+  border: none !important;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-azulgris:hover {
+  background-color: #40698a !important; /* un poco más oscuro */
+  color: #fff !important;
 }

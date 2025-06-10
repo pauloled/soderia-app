@@ -97,7 +97,8 @@ const Cliente = () => {
                       className="d-flex justify-content-between align-items-center border-bottom py-2"
                     >
                       <span>
-                        <strong>{p.nombre}</strong> - Cantidad: {p.cantidad}
+                        <strong>{p.nombre}</strong> (${p.precio} c/u) - Cantidad: {p.cantidad} 
+                        (<span className="text-success">${p.precio * p.cantidad}</span>)
                       </span>
                       <button
                         className="btn btn-sm btn-danger"

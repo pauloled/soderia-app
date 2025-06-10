@@ -23,7 +23,7 @@ const NavbarLanding = () => {
             <li className="nav-item"><a className="nav-link" href="#productos">Productos</a></li>
             <li className="nav-item"><a className="nav-link" href="#contacto">Contacto</a></li>
             <li className="nav-item">
-              <button className="btn btn-outline-dark ms-3" onClick={() => navigate('/login')}>
+              <button className="btn btn-azulgris ms-3" onClick={() => navigate('/login')}>
                 Iniciar sesión
               </button>
             </li>
