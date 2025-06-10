@@ -1,9 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
  import '../styles/HeroSection.css';
-=======
 import '../styles/HeroSection.css';
->>>>>>> e3d0000db6c57b9e47281e295feff1f3704ece3c
 import videoFondo from '../assets/agua.mp4'; // ✅ Importar video
 import { useNavigate } from 'react-router-dom';
 
