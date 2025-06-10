@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import NavbarAdmin from "../components/NavbarAdmin.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Usuarios = () => {
@@ -41,7 +41,7 @@ const Usuarios = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarAdmin />
       <div className="container mt-4">
         <h2 className="fw-bold mb-4">Gestor de Clientes</h2>
         <div className="row">

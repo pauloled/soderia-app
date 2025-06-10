@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Navbar from '../components/Navbar';
+import NavbarAdmin from '../components/NavbarAdmin.jsx';
 import '../styles/Productos.css';
 
 const Productos = () => {
@@ -106,7 +106,7 @@ const Productos = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarAdmin />
       <div className="container mt-5">
         <h2 className="mb-4">Gestión de Productos</h2>
 

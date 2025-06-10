@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useStore from "../store/useStore";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import NavbarCliente from '../components/NavbarCliente.jsx';
 import { useNavigate } from "react-router-dom";
 
 const Cliente = () => {
@@ -69,7 +69,7 @@ const Cliente = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarCliente />
       <div className="container mt-4">
         <button
           className="btn btn-info mb-3"

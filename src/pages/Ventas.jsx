@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useStore from "../store/useStore";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import NavbarAdmin from '../components/NavbarAdmin.jsx';
 
 const Ventas = () => {
   const { productos, fetchProductos } = useStore();
@@ -104,7 +104,7 @@ const Ventas = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarAdmin />
       <div className="container mt-4">
         <h2 className="text-primary fw-bold">Gestión de Ventas</h2>
 
