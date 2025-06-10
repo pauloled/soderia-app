@@ -2,13 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../assets/logo.png';
-import '../styles/Navbar.css'; // asegúrate de que la ruta sea correcta
+import '../styles/NavbarLanding.css'; // asegúrate de que la ruta sea correcta
 
 const NavbarLanding = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar fixed-top w-100">
+    <nav className="navbar navbar-expand-lg navbar-landing fixed-top w-100">
       <div className="container-fluid d-flex align-items-center justify-content-between">
         <a className="navbar-brand d-flex align-items-center" href="#">
           <img src={logo} alt="Logo Sodería" className="logo me-2" />

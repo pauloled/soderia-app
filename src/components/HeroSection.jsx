@@ -15,7 +15,7 @@ const HeroSection = () => {
       {/* Contenido encima del video */}
       <div className="container-fluid contenido-hero">
         <div className="row align-items-center">
-          <div className="col-md-6">
+          <div className="col-md-6 offset-md-3 hero-text">
             <h1 className="display-4 text-white">¡Pureza bien protegida!</h1>
             <p className="mt-3 text-white">
               Envíos a todo el país! <br />
