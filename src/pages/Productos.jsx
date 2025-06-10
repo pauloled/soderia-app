@@ -3,6 +3,15 @@ import axios from 'axios';
 import NavbarAdmin from '../components/NavbarAdmin.jsx';
 import '../styles/Productos.css';
 
+// Lista de imágenes disponibles en assets
+const imagenesDisponibles = [
+  { nombre: "Soda 1.5L", ruta: "../assets/soda15.png" },
+  { nombre: "Soda 2.25L", ruta: "../assets/soda225.png" },
+  { nombre: "Soda 600ml retornable", ruta: "../assets/soda600.png" },
+  { nombre: "Bidon Grande 8L", ruta: "../assets/bidon8l.png" }
+  // Agrega aquí más imágenes si tienes
+];
+
 const Productos = () => {
   const [producto, setProducto] = useState({
     nombre: '',
@@ -34,24 +43,11 @@ const Productos = () => {
     setProducto({ ...producto, [e.target.name]: e.target.value });
   };
 
-  const handleImageUpload = (e, setState) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      setState((prev) => ({ ...prev, imagen: reader.result }));
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1;
-      const nuevoProducto = { id: nuevoId, ...producto };
+      const nuevoId = productos.length > 0 ? Number(productos[productos.length - 1].id) + 1 : 1;
+      const nuevoProducto = { id: String(nuevoId), ...producto };
 
       await axios.post('http://localhost:3000/productos', nuevoProducto);
 
@@ -92,10 +88,6 @@ const Productos = () => {
 
   const handleEditChange = (e) => {
     setEditData({ ...editData, [e.target.name]: e.target.value });
-  };
-
-  const handleEditImage = (e) => {
-    handleImageUpload(e, setEditData);
   };
 
   const handleEditSave = async (id) => {
@@ -149,12 +141,26 @@ const Productos = () => {
                   />
                 </div>
                 <div className="col-md-3">
-                  <input
-                    type="file"
+                  <select
                     className="form-control"
-                    onChange={(e) => handleImageUpload(e, setProducto)}
-                    accept="image/*"
-                  />
+                    name="imagen"
+                    value={producto.imagen}
+                    onChange={handleChange}
+                  >
+                    <option value="">Seleccionar imagen</option>
+                    {imagenesDisponibles.map((img) => (
+                      <option key={img.ruta} value={img.ruta}>
+                        {img.nombre}
+                      </option>
+                    ))}
+                  </select>
+                  {producto.imagen && (
+                    <img
+                      src={producto.imagen}
+                      alt="Vista previa"
+                      style={{ width: "60px", marginTop: "5px" }}
+                    />
+                  )}
                 </div>
                 <div className="col-md-2">
                   <button className="btn btn-primary w-100" type="submit">Agregar</button>
@@ -246,12 +252,19 @@ const Productos = () => {
                         {editData.imagen && (
                           <img src={editData.imagen} alt={editData.nombre} width="60" />
                         )}
-                        <input
-                          type="file"
+                        <select
                           className="form-control mt-2"
-                          onChange={handleEditImage}
-                          accept="image/*"
-                        />
+                          name="imagen"
+                          value={editData.imagen}
+                          onChange={handleEditChange}
+                        >
+                          <option value="">Seleccionar imagen</option>
+                          {imagenesDisponibles.map((img) => (
+                            <option key={img.ruta} value={img.ruta}>
+                              {img.nombre}
+                            </option>
+                          ))}
+                        </select>
                       </>
                     ) : (
                       prod.imagen && <img src={prod.imagen} alt={prod.nombre} width="60" />

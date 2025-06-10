@@ -130,7 +130,19 @@ const Cliente = () => {
           {productos.map((producto) => (
             <div className="col-md-4 mb-3" key={producto.id}>
               <div className="card">
-                <div className="card-body">
+                <div className="card-body text-center">
+                  {producto.imagen && (
+                    <img
+                      src={producto.imagen}
+                      alt={producto.nombre}
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "120px",
+                        objectFit: "contain",
+                        marginBottom: "10px"
+                      }}
+                    />
+                  )}
                   <h5 className="card-title">{producto.nombre}</h5>
                   <p className="card-text">Precio: ${producto.precio}</p>
                   <p className="card-text">Stock: {producto.stock}</p>

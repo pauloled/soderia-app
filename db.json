@@ -41,22 +41,22 @@
     {
       "id": "12",
       "nombre": "Soda 1.5L",
-      "precio": 900,
-      "stock": 50,
+      "precio": "1200",
+      "stock": 98,
       "imagen": ""
     },
     {
       "id": "13",
       "nombre": "Soda 2.25L",
       "precio": 1000,
-      "stock": 28,
+      "stock": 15,
       "imagen": ""
     },
     {
       "id": "14",
       "nombre": "Soda 600ml retornable",
       "precio": 300,
-      "stock": 121,
+      "stock": 101,
       "imagen": ""
     },
     {
@@ -134,7 +134,7 @@
         }
       ],
       "total": 21000,
-      "estado": "pendiente"
+      "estado": "completada"
     },
     {
       "id": "974a",
@@ -155,6 +155,27 @@
         }
       ],
       "total": 33500,
+      "estado": "pendiente"
+    },
+    {
+      "id": "6590",
+      "fecha": "2025-06-10",
+      "usuario": "santiledes",
+      "productos": [
+        {
+          "nombre": "Soda 1.5L",
+          "cantidad": 2
+        },
+        {
+          "nombre": "Soda 2.25L",
+          "cantidad": 5
+        },
+        {
+          "nombre": "Soda 600ml retornable",
+          "cantidad": 20
+        }
+      ],
+      "total": 12800,
       "estado": "pendiente"
     }
   ]
