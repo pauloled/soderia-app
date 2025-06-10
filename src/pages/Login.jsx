@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import useStore from '../store/useStore';
 import '../styles/login.css';          // ⬅️  importa los estilos
+import Navbarlogin from "../components/Navbarlogin.jsx";
 
 const Login = () => {
   const [form, setForm]   = useState({ usuario: '', password: '' });
@@ -43,47 +44,51 @@ const Login = () => {
 };
 
   return (
-    <div className="login-bg d-flex justify-content-center align-items-center">
-      <div className="login-card shadow">
-        <h2 className="text-center mb-4">Iniciar Sesión</h2>
+     
+    <>
+      <Navbarlogin />
+      <div className="login-bg d-flex justify-content-center align-items-center">
+        <div className="login-card shadow">
+          <h2 className="text-center mb-4">Iniciar Sesión</h2>
 
-        {error && <p className="text-danger text-center">{error}</p>}
+          {error && <p className="text-danger text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <input
-              type="text"
-              name="usuario"
-              className="form-control"
-              placeholder="Usuario"
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="usuario"
+                className="form-control"
+                placeholder="Usuario"
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <div className="mb-3">
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              placeholder="Contraseña"
-              onChange={handleChange}
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <input
+                type="password"
+                name="password"
+                className="form-control"
+                placeholder="Contraseña"
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-          <button type="submit" className="btn btn-primary w-100">
-            Ingresar
-          </button>
+            <button type="submit" className="btn btn-primary w-100">
+              Ingresar
+            </button>
             <button
-          type="button"
-          className="btn btn-primary w-100 mt-2"
-          onClick={() => navigate('/registro')}>
-          Registrarse
-        </button>
-        </form>
+              type="button"
+              className="btn btn-primary w-100 mt-2"
+              onClick={() => navigate('/registro')}>
+              Registrarse
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
