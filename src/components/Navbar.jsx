@@ -22,11 +22,7 @@ const Navbar = () => {
         </a>
         <div className="collapse navbar-collapse justify-content-end">
           <ul className="navbar-nav d-flex align-items-center gap-2">
-            <li className="nav-item">
-              <button className="btn btn-outline-light" onClick={() => navigate("/")}>
-                Home
-              </button>
-            </li>
+            
             {rol === "admin" && (
               <>
                 <li className="nav-item">

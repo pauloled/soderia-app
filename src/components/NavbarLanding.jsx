@@ -10,9 +10,10 @@ const NavbarLanding = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-landing fixed-top w-100">
       <div className="container-fluid d-flex align-items-center justify-content-between">
-        <a className="navbar-brand d-flex align-items-center" href="#">
-          <img src={logo} alt="Logo Sodería" className="logo me-2" />
-        </a>
+       <div className="navbar-brand d-flex align-items-center" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+  <img src={logo} alt="Logo Sodería" className="logo me-2" />
+</div>
+
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon" />
         </button>
