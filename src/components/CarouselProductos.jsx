@@ -11,24 +11,46 @@ import '../styles/Carousel.css';
 const CarouselProductos = () => (
   <section id="productos" className="bg-white py-5">
     <div className="container text-center">
-      <h2 className="mb-4">Nuestros Productos</h2>
+      <h2 className="mb-4 text-primary fw-bold">Nuestros Productos</h2>
+
       <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
+
           <div className="carousel-item active">
-            <img src={producto1} className="d-block w-100" alt="Producto 1" />
+            <div className="producto-slide">
+              <img src={producto1} className="d-block w-100" alt="Agua sin gas" />
+              <h5 className="nombre-producto">Agua sin gas</h5>
+            </div>
           </div>
+
           <div className="carousel-item">
-            <img src={producto2} className="d-block w-100" alt="Producto 2" />
+            <div className="producto-slide">
+              <img src={producto2} className="d-block w-100" alt="Bidones retornables" />
+              <h5 className="nombre-producto">Bidones retornables</h5>
+            </div>
           </div>
-          <div className="carousel-item active">
-            <img src={producto3} className="d-block w-100" alt="Producto 3" />
+
+          <div className="carousel-item">
+            <div className="producto-slide">
+              <img src={producto3} className="d-block w-100" alt="Dispensers" />
+              <h5 className="nombre-producto">Dispensers</h5>
+            </div>
           </div>
-          <div className="carousel-item active">
-            <img src={producto4} className="d-block w-100" alt="Producto 4" />
+
+          <div className="carousel-item">
+            <div className="producto-slide">
+              <img src={producto4} className="d-block w-100" alt="Aguas saborizadas" />
+              <h5 className="nombre-producto">Aguas saborizadas</h5>
+            </div>
           </div>
-          <div className="carousel-item active">
-            <img src={producto5} className="d-block w-100" alt="Producto 5" />
+
+          <div className="carousel-item">
+            <div className="producto-slide">
+              <img src={producto5} className="d-block w-100" alt="Sifones de soda" />
+              <h5 className="nombre-producto">Sifones de soda</h5>
+            </div>
           </div>
+
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" />
