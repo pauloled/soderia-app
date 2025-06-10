@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/HeroSection.css';
 import bidon from '../assets/bidon.png';
+import videoFondo from '../assets/agua.mp4'; // ✅ Importar video
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -8,7 +9,11 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section">
-      <div className="container-fluid">
+      
+      <video className="video-bg" src={videoFondo} autoPlay muted loop playsInline />
+
+      {/* Contenido encima del video */}
+      <div className="container-fluid contenido-hero">
         <div className="row align-items-center">
           <div className="col-md-6">
             <h1 className="display-4 text-white">¡Pureza bien protegida!</h1>
@@ -22,9 +27,7 @@ const HeroSection = () => {
               ¡Hacé tu pedido!
             </button>
           </div>
-          <div className="col-md-6 text-center">
-            <img src={bidon} alt="Bidón de soda" className="bidon-img" />
-          </div>
+          
         </div>
       </div>
     </section>
