@@ -1,6 +1,10 @@
-import React from 'react';
-import producto1 from '../assets/prod1.jpg'; // productos fake
-import producto2 from '../assets/prod2.jpg';
+import React from 'react'; // productos fake
+import producto1 from '../assets/aguasinfondo.png';
+import producto2 from '../assets/bidoness.png';
+import producto3 from '../assets/dispenser2.png';
+import producto4 from '../assets/saborizadas.png';
+import producto5 from '../assets/sifonsoda.png';
+
 import '../styles/Carousel.css';
 
 
@@ -15,6 +19,15 @@ const CarouselProductos = () => (
           </div>
           <div className="carousel-item">
             <img src={producto2} className="d-block w-100" alt="Producto 2" />
+          </div>
+          <div className="carousel-item active">
+            <img src={producto3} className="d-block w-100" alt="Producto 3" />
+          </div>
+          <div className="carousel-item active">
+            <img src={producto4} className="d-block w-100" alt="Producto 4" />
+          </div>
+          <div className="carousel-item active">
+            <img src={producto5} className="d-block w-100" alt="Producto 5" />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
