@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 
 const Ventas = () => {
-  const { productos, fetchProductos, usuario } = useStore();
+  const { productos, fetchProductos } = useStore();
   const [ventas, setVentas] = useState([]);
   const [cliente, setCliente] = useState("");
   const [productoSeleccionado, setProductoSeleccionado] = useState("");
@@ -50,8 +50,7 @@ const Ventas = () => {
 
     const nuevaVenta = {
       fecha: new Date().toISOString().split("T")[0],
-      usuario: usuario?.nombre || "admin",
-      cliente,
+      usuario: cliente, // ← aquí se usa el cliente seleccionado como usuario
       productos: productosSeleccionados.map((p) => ({
         nombre: p.nombre,
         cantidad: p.cantidad,
@@ -62,7 +61,6 @@ const Ventas = () => {
 
     await axios.post("http://localhost:3000/ventas", nuevaVenta);
 
-    // Actualizar stock
     for (const prod of productosSeleccionados) {
       const nuevoStock = prod.stock - prod.cantidad;
       await axios.patch(`http://localhost:3000/productos/${prod.id}`, {

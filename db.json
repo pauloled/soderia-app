@@ -27,31 +27,24 @@
   ],
   "productos": [
     {
-      "id": "11",
-      "nombre": "Agua Saborizada - IVESS CITRUS",
-      "precio": 2500,
-      "stock": 193,
-      "imagen": ""
-    },
-    {
       "id": "12",
       "nombre": "Soda 1.5L",
       "precio": 900,
-      "stock": 83,
+      "stock": 81,
       "imagen": ""
     },
     {
       "id": "13",
       "nombre": "Soda 2.25L",
       "precio": 1000,
-      "stock": 100,
+      "stock": 87,
       "imagen": ""
     },
     {
       "id": "14",
       "nombre": "Soda 600ml retornable",
       "precio": 300,
-      "stock": 247,
+      "stock": 242,
       "imagen": ""
     }
   ],
@@ -75,54 +68,16 @@
   ],
   "ventas": [
     {
-      "id": 1,
-      "fecha": "2025-06-06",
-      "usuario": "admin",
+      "id": "76cf",
+      "fecha": "2025-06-10",
+      "usuario": "Carlos Perez",
       "productos": [
         {
-          "id": 1,
-          "nombre": "Soda 1.5L",
-          "cantidad": 2
-        },
-        {
-          "id": 2,
           "nombre": "Soda 2.25L",
-          "cantidad": 1
-        }
-      ],
-      "total": 2800,
-      "estado": "completada"
-    },
-    {
-      "id": 2,
-      "fecha": "2025-06-06",
-      "usuario": "admin",
-      "productos": [
-        {
-          "id": 5,
-          "nombre": "Soda 600ml retornable",
-          "cantidad": 4
-        }
-      ],
-      "total": 1200,
-      "estado": "pendiente"
-    },
-    {
-      "id": "f0e1",
-      "fecha": "2025-06-09",
-      "usuario": "admin",
-      "cliente": "Carlos Perez",
-      "productos": [
-        {
-          "nombre": "Agua Saborizada - IVESS CITRUS",
           "cantidad": 5
-        },
-        {
-          "nombre": "Soda 1.5L",
-          "cantidad": 60
         }
       ],
-      "total": 66500,
+      "total": 5000,
       "estado": "completada"
     }
   ]

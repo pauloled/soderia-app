@@ -13,25 +13,34 @@ const Login = () => {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.get('http://localhost:3000/usuarios');
-      const usuarioEncontrado = data.find(
-        (u) => u.usuario === form.usuario && u.password === form.password
-      );
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const { data } = await axios.get('http://localhost:3000/usuarios');
+    const usuarioEncontrado = data.find(
+      (u) => u.usuario === form.usuario && u.password === form.password
+    );
 
-      if (usuarioEncontrado) {
-        login(usuarioEncontrado.usuario, usuarioEncontrado.rol);
-        navigate('/home');
+    if (usuarioEncontrado) {
+      login(usuarioEncontrado.usuario, usuarioEncontrado.rol);
+
+      // 🔁 Redirige según el rol
+      if (usuarioEncontrado.rol === 'admin') {
+        navigate('/admin');
+      } else if (usuarioEncontrado.rol === 'cliente') {
+        navigate('/cliente');
       } else {
-        setError('Usuario o contraseña incorrectos');
+        navigate('/home'); // fallback si querés agregar más roles
       }
-    } catch (err) {
-      console.error(err);
-      setError('Error en la conexión');
+
+    } else {
+      setError('Usuario o contraseña incorrectos');
     }
-  };
+  } catch (err) {
+    console.error(err);
+    setError('Error en la conexión');
+  }
+};
 
   return (
     <div className="login-bg d-flex justify-content-center align-items-center">
