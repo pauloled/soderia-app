@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/HeroSection.css';
-import bidon from '../assets/bidon.png';
 import videoFondo from '../assets/agua.mp4'; // ✅ Importar video
 import { useNavigate } from 'react-router-dom';
 
