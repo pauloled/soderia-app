@@ -1,7 +1,7 @@
 import React from 'react';
  import '../styles/HeroSection.css';
 import '../styles/HeroSection.css';
-import videoFondo from '../assets/agua.mp4'; // ✅ Importar video
+import videoFondo from '../assets/agua.mp4'; 
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {

@@ -1,0 +1,18 @@
+.NavbarLogin {
+background-color: #d3d3d3; /* Gris claro */
+padding: 0.3rem 1rem; /* menos padding vertical */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: visible; /* deja que el logo se "salga" un poco */
+}
+
+.logo-login {
+    height: 90px;       /* más grande y visible */
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+  margin-top: -10px;  /* permite que "sobresalga" un poco hacia arriba */
+  margin-bottom: -10px;
+}
+
