@@ -11,7 +11,7 @@ const NavbarLogin = () => {
       <div onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
         <img src={logo} alt="Logo Sodería" className="logo-login" />
       </div>
-      <button className="btn btn-outline-light" onClick={() => navigate('/')}>
+      <button className="btn btn-primary" onClick={() => navigate('/')}>
         Home
       </button>
     </nav>

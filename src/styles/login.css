@@ -8,7 +8,7 @@ html, body, #root {
 .login-bg {
   height: 100vh;
   width: 100vw;
-  background-image: url('./src/assets/fondo.jpeg'); /* ✅ Ruta según tu estructura */
+background: none;
   background-size: cover;        /* Que cubra toda la pantalla */
   background-position: center;   /* Centrada */
   background-repeat: no-repeat;  /* No se repita */
@@ -34,4 +34,13 @@ html, body, #root {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }

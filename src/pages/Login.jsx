@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useStore from '../store/useStore';
 import '../styles/login.css';          // ⬅️  importa los estilos
 import Navbarlogin from "../components/Navbarlogin.jsx";
+import videoFondo from '../assets/agua.mp4'; 
 
 const Login = () => {
   const [form, setForm]   = useState({ usuario: '', password: '' });
@@ -44,10 +45,11 @@ const Login = () => {
 };
 
   return (
-     
     <>
       <Navbarlogin />
       <div className="login-bg d-flex justify-content-center align-items-center">
+        <video className="video-bgl" src={videoFondo} autoPlay muted loop playsInline />
+          <div className="video-overlay"></div>
         <div className="login-card shadow">
           <h2 className="text-center mb-4">Iniciar Sesión</h2>
 
