@@ -27,6 +27,11 @@ const NavbarHistorial = () => {
                 Home
               </button>
             </li>
+            <li className="nav-item">
+              <button className="btn btn-outline-primary" onClick={() => navigate('/usuarios')}>
+                Clientes
+              </button>
+            </li>
             <li className="nav-item text-black px-2">👤 {usuario?.usuario}</li>
             <li className="nav-item">
               <button className="btn btn-danger" onClick={handleLogout}>Cerrar sesión</button>
