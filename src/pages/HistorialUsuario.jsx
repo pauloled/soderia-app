@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import NavbarHistorial from "../components/NavbarHistorial.jsx";
 import { useParams } from "react-router-dom";
 
 const HistorialUsuario = () => {
@@ -38,7 +38,7 @@ const HistorialUsuario = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarHistorial />
       <div className="container mt-4">
         <h2 className="fw-bold mb-3">Historial de {usuario.usuario}</h2>
         <div className="card mb-4">
